@@ -18,7 +18,7 @@ int registrar() {
 	strcpy(arquivo, cpf); //responsavel por copiar os valores das strings tipo x = y, dar o nome?
 	
 	FILE *file; //chamando a função FILE para criar um arquivo 
-	file = fopen(arquivo, "w"); //abre um arquivo novo com o "w"
+	file = fopen(arquivo, "w"); //abre um arquivo novo com o "w", criar um arquivo e ja escrever
 	fprintf(file, cpf); //salva o valor da variavel
 	fclose(file); //fecha o arquivo
 	
@@ -106,11 +106,7 @@ int deletar() {
 	} else {
 		printf("Arquivo deletado com sucesso!\n");
 	}
-	
-	
-	
-	
-	
+
 	system("pause");
 }
 
@@ -132,17 +128,13 @@ int main() {
 		printf("\t1 - Registrar nomes\n"); //\t é tipo um tab
 		printf("\t2 - Consultar nomes\n");
 		printf("\t3 - Deletar nomes\n");
-		printf("\t0 - Encerrar o programa\n\n");
+		printf("\t4 - Encerrar o programa\n\n");
 		printf("Digite sua opção: "); //fim do menu
 		scanf("%d", &opcao); //armazena a escolha do usuario
 		
 		system("cls"); 
 		
 		switch (opcao) { //inicio da seleção
-			case 0:
-				printf("Saindo do programa...\n\n");
-				printf("Esse Software é de Gabriel Miranda Mucarbel de Lima!\n");
-				return 0;
 			case 1:
 				registrar(opcao);
 				break;
@@ -155,6 +147,11 @@ int main() {
 				deletar();
 				break;
 					
+			case 4:
+				printf("Saindo do programa...\n\n");
+				printf("Esse Software é de Gabriel Miranda Mucarbel de Lima!\n");
+				return 0;
+				
 			default:
 				printf("Opção invalida!\n\n");
 				system("pause");
@@ -166,8 +163,6 @@ int main() {
 	// printf("Esse Software é de Gabriel Miranda Mucarbel de Lima!\n");
 	
 	return 0;
-
-	
 	
 }
 
